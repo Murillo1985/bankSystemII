@@ -8,7 +8,7 @@ public class App {
         Account arthurAccount = new Account(1, 1);
         System.out.println("Murillo Balance Before ->" + murilloAccount.getBalance());
         System.out.println("Arthur Balance Before ->" + arthurAccount.getBalance());
-        
+
         boolean transferResult = murilloAccount.transfer(50.0, arthurAccount);
         System.out.println("Transfer result->" + transferResult);
 
