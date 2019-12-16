@@ -74,4 +74,8 @@ public class Account {
     public static int getTotal() {
         return Account.total;
     }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
 }

@@ -5,6 +5,12 @@ public class Client {
     private String nif;
     private String profession;
 
+    private Account account;
+
+    public Client(String nome) {
+        this.name = nome;
+    }
+
     public String getName() {
         return name;
     }
@@ -23,4 +29,6 @@ public class Client {
     public void setProfession(String profession) {
         this.profession = profession;
     }
+
+
 }
