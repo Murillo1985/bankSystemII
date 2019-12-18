@@ -4,6 +4,6 @@ import agencyProperties.Account;
 
 public interface TransferService {
 
-    boolean transfer(Account origem, Account destino, double valor);
+    boolean transfer(Account checkoutAccount, Account destinyAccount, double value);
 
 }

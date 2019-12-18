@@ -1,22 +1,23 @@
 package services;
 
 import agencyProperties.Client;
-import com.sun.deploy.util.SessionState;
+
+
 
 public class ClientServiceImpl implements ClientService {
 
     @Override
-    public Client register(String nome) {
+    public Client register(String name, String nif, String profession) {
 
-        validate(nome);
+        validate(name, nif, profession);
 
-       Client client = new Client(nome);
+       Client client = new Client(name, nif, profession);
         return client;
     }
 
-    private void validate(String nome) {
-        if(nome.equals("")) {
-            throw new RuntimeException("Invalid name");
+    private void validate(String name, String nif, String profession) {
+        if(name.equals("")) {
+            throw new RuntimeException("Invalid name,");
         }
     }
 }

@@ -9,12 +9,10 @@ public class Account {
 
     public Account(int agency, int number) {
         Account.total++;
-        System.out.println("The total accounts " + Account.total);
-
         this.agency = agency;
         this.number = number;
         this.balance = 100;
-        System.out.println("Creating a new Account: " + this.number);
+        
     }
 
     public void deposits(double value) {
