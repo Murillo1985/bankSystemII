@@ -12,27 +12,27 @@ public class TransferServiceTest {
     @Test
     public void transfer_betweenTwoAccounts_withBalance_returnsTrue() {
 
-        Account origem = new Account(1, 1);
-        Account destino = new Account(1, 2);
+        Account checkoutAccount = new Account(1, 1);
+        Account destinyAccount = new Account(1, 2);
 
-        boolean resultadoTransf = transferService.transfer(origem, destino, 100);
+        boolean transferResult = transferService.transfer(checkoutAccount, destinyAccount, 100);
 
-        Assert.assertTrue(resultadoTransf);
-        Assert.assertTrue(origem.getBalance() == 0.0);
-        Assert.assertTrue(destino.getBalance() == 200.0);
+        Assert.assertTrue(transferResult);
+        Assert.assertTrue(checkoutAccount.getBalance() == 0.0);
+        Assert.assertTrue(destinyAccount.getBalance() == 200.0);
     }
 
     @Test
     public void transfer_betweenTwoAccounts_withoutBalance_returnsFalse() {
 
-        Account origem = new Account(1, 1);
-        Account destino = new Account(1, 2);
+        Account checkoutAccount = new Account(1, 1);
+        Account destinyAccount = new Account(1, 2);
 
-        boolean resultadoTransf = transferService.transfer(origem, destino, 101);
+        boolean transferResult = transferService.transfer(checkoutAccount, destinyAccount, 101);
 
-        Assert.assertFalse(resultadoTransf);
-        Assert.assertTrue(origem.getBalance() == 100.0);
-        Assert.assertTrue(destino.getBalance() == 100.0);
+        Assert.assertFalse(transferResult);
+        Assert.assertTrue(checkoutAccount.getBalance() == 100.0);
+        Assert.assertTrue(destinyAccount.getBalance() == 100.0);
     }
 
 }

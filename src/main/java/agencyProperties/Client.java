@@ -4,12 +4,14 @@ public class Client {
     private String name;
     private String nif;
     private String profession;
-
-    private Account account;
-
-    public Client(String nome) {
-        this.name = nome;
-    }
+    
+    public Client(String name, String nif, String profession) {
+		super();
+		this.name = name;
+		this.nif = nif;
+		this.profession = profession;
+	}
+	
 
     public String getName() {
         return name;

@@ -5,16 +5,16 @@ import agencyProperties.Account;
 public class TransferServiceImpl implements TransferService {
 
     @Override
-    public boolean transfer(Account origem, Account destino, double valor) {
+    public boolean transfer(Account checkoutAccount, Account destinyAccount, double value) {
 
-        double saldoContaOrigem = origem.getBalance();
+        double checkoutAccountBalance = checkoutAccount.getBalance();
 
-        if (checkAccountBalance(origem, valor)) {
+        if (checkAccountBalance(checkoutAccount, value)) {
 
-            origem.setBalance(saldoContaOrigem - valor);
+            checkoutAccount.setBalance(checkoutAccountBalance - value);
 
-            double saldoContaDestino = destino.getBalance();
-            destino.setBalance(saldoContaDestino + valor);
+            double destinyAccountBalance = destinyAccount.getBalance();
+            destinyAccount.setBalance(destinyAccountBalance + value);
 
             return true;
         }
@@ -22,7 +22,7 @@ public class TransferServiceImpl implements TransferService {
         return false;
     }
 
-    private boolean checkAccountBalance(Account conta, double valor) {
-        return conta.getBalance()>=valor;
+    private boolean checkAccountBalance(Account account, double value) {
+        return account.getBalance()>=value;
     }
 }
